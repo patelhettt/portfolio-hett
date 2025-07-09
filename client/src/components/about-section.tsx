@@ -29,11 +29,25 @@ export default function AboutSection() {
           >
             <div className="rounded-lg shadow-2xl border border-green-500/30 hover:border-green-500/60 transition-all duration-300 bg-gradient-to-br from-slate-800 to-slate-900 p-8 flex items-center justify-center">
               <div className="text-center">
-                <div className="text-green-500 text-8xl mb-4">
-                  <Shield />
+                <div className="w-48 h-48 rounded-full mx-auto border-4 border-green-500 shadow-lg mb-6 overflow-hidden bg-gradient-to-br from-green-900/50 to-green-700/50">
+                  <img 
+                    src="https://raw.githubusercontent.com/patelhettt/patelhettt/main/me.jpeg" 
+                    alt="Het Patel - Cybersecurity Professional" 
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  />
+                  <div className="w-full h-full flex items-center justify-center" style={{ display: 'none' }}>
+                    <Shield className="w-16 h-16 text-green-500" />
+                  </div>
                 </div>
-                <div className="text-white font-bold text-2xl">Cybersecurity</div>
-                <div className="text-green-500 font-mono">Professional</div>
+                <div className="text-white font-bold text-2xl">Het Patel</div>
+                <div className="text-green-500 font-mono">Cybersecurity Professional</div>
+                <div className="text-cyan-400 font-mono text-sm mt-2">VAPT Specialist • Top 5% TryHackMe</div>
               </div>
             </div>
           </motion.div>
