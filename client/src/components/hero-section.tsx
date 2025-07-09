@@ -37,21 +37,8 @@ export default function HeroSection() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="mb-8 relative"
         >
-          <div className="w-32 h-32 rounded-full mx-auto border-4 border-green-500 shadow-lg animate-glow bg-gradient-to-br from-green-900/50 to-green-700/50 overflow-hidden">
-            <img 
-              src="https://raw.githubusercontent.com/patelhettt/patelhettt/main/me.jpeg" 
-              alt="Het Patel" 
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.style.display = 'none';
-                const fallback = target.nextElementSibling as HTMLElement;
-                if (fallback) fallback.style.display = 'flex';
-              }}
-            />
-            <div className="w-full h-full flex items-center justify-center" style={{ display: 'none' }}>
-              <Shield className="w-16 h-16 text-green-500" />
-            </div>
+          <div className="w-32 h-32 rounded-full mx-auto border-4 border-green-500 shadow-lg animate-glow bg-gradient-to-br from-green-900/50 to-green-700/50 flex items-center justify-center">
+            <Shield className="w-16 h-16 text-green-500" />
           </div>
         </motion.div>
         
