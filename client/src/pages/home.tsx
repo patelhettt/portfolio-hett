@@ -4,6 +4,7 @@ import AboutSection from "@/components/about-section";
 import ExperienceSection from "@/components/experience-section";
 import SkillsSection from "@/components/skills-section";
 import ProjectsSection from "@/components/projects-section";
+import MediumSection from "@/components/medium-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 import MatrixBackground from "@/components/matrix-background";
@@ -18,6 +19,7 @@ export default function Home() {
       <ExperienceSection />
       <SkillsSection />
       <ProjectsSection />
+      <MediumSection />
       <ContactSection />
       <Footer />
     </div>

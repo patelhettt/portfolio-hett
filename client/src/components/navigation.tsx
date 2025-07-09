@@ -47,6 +47,9 @@ export default function Navigation() {
             <button onClick={() => scrollToSection("projects")} className="text-gray-300 hover:text-green-500 transition-colors font-mono">
               &gt; projects
             </button>
+            <button onClick={() => scrollToSection("medium")} className="text-gray-300 hover:text-green-500 transition-colors font-mono">
+              &gt; medium
+            </button>
             <button onClick={() => scrollToSection("contact")} className="text-gray-300 hover:text-green-500 transition-colors font-mono">
               &gt; contact
             </button>
@@ -80,6 +83,9 @@ export default function Navigation() {
               </button>
               <button onClick={() => scrollToSection("projects")} className="text-gray-300 hover:text-green-500 transition-colors font-mono text-left">
                 &gt; projects
+              </button>
+              <button onClick={() => scrollToSection("medium")} className="text-gray-300 hover:text-green-500 transition-colors font-mono text-left">
+                &gt; medium
               </button>
               <button onClick={() => scrollToSection("contact")} className="text-gray-300 hover:text-green-500 transition-colors font-mono text-left">
                 &gt; contact
