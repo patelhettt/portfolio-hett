@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Cybersecurity theme colors */
+  --cyber-green: hsl(120, 100%, 50%);
+  --cyber-blue: hsl(195, 100%, 50%);
+  --dark-slate: hsl(220, 39%, 11%);
+  --matrix-bg: hsl(120, 100%, 7%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    background-color: hsl(220, 39%, 11%);
+    color: hsl(0, 0%, 98%);
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .cyber-green {
+    color: hsl(120, 100%, 50%);
+  }
+  
+  .cyber-blue {
+    color: hsl(195, 100%, 50%);
+  }
+  
+  .dark-slate {
+    background-color: hsl(220, 39%, 11%);
+  }
+  
+  .matrix-bg {
+    background-color: hsl(120, 100%, 7%);
+  }
+  
+  .text-cyber-green {
+    color: hsl(120, 100%, 50%);
+  }
+  
+  .text-cyber-blue {
+    color: hsl(195, 100%, 50%);
+  }
+  
+  .bg-cyber-green {
+    background-color: hsl(120, 100%, 50%);
+  }
+  
+  .bg-cyber-blue {
+    background-color: hsl(195, 100%, 50%);
+  }
+  
+  .border-cyber-green {
+    border-color: hsl(120, 100%, 50%);
+  }
+  
+  .border-cyber-blue {
+    border-color: hsl(195, 100%, 50%);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px hsl(120, 100%, 50%);
+  }
+  
+  .glow-blue {
+    box-shadow: 0 0 20px hsl(195, 100%, 50%);
+  }
+
+  .typing-cursor::after {
+    content: '|';
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  @keyframes matrix-fall {
+    0% { transform: translateY(-100vh); }
+    100% { transform: translateY(100vh); }
+  }
+
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px hsl(120, 100%, 50%); }
+    50% { box-shadow: 0 0 30px hsl(120, 100%, 50%), 0 0 40px hsl(120, 100%, 50%); }
+  }
+
+  .animate-matrix-fall {
+    animation: matrix-fall 20s linear infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(220, 39%, 11%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(120, 100%, 50%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(120, 100%, 40%);
+}
