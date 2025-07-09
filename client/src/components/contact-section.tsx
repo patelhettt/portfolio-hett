@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Linkedin, Github, Gamepad, Circle } from "lucide-react";
+import { Mail, Linkedin, Github, Gamepad, Circle, BookOpen } from "lucide-react";
 
 export default function ContactSection() {
   return (
@@ -42,7 +42,15 @@ export default function ContactSection() {
                       </div>
                       <div>
                         <div className="text-gray-300 font-mono text-sm">EMAIL</div>
-                        <div className="text-white">het.patel@example.com</div>
+                        <div className="text-white">
+                          <a href="mailto:awesomehet1@gmail.com" className="hover:text-green-500 transition-colors">
+                            awesomehet1@gmail.com
+                          </a>
+                          <br />
+                          <a href="mailto:hetworkshard@gmail.com" className="hover:text-green-500 transition-colors">
+                            hetworkshard@gmail.com
+                          </a>
+                        </div>
                       </div>
                     </div>
                     
@@ -52,7 +60,11 @@ export default function ContactSection() {
                       </div>
                       <div>
                         <div className="text-gray-300 font-mono text-sm">LINKEDIN</div>
-                        <div className="text-white">linkedin.com/in/hetpatel</div>
+                        <div className="text-white">
+                          <a href="https://www.linkedin.com/in/hetpatel9/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">
+                            linkedin.com/in/hetpatel9
+                          </a>
+                        </div>
                       </div>
                     </div>
                     
@@ -62,7 +74,11 @@ export default function ContactSection() {
                       </div>
                       <div>
                         <div className="text-gray-300 font-mono text-sm">GITHUB</div>
-                        <div className="text-white">github.com/hetpatel</div>
+                        <div className="text-white">
+                          <a href="https://github.com/patelhettt" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors">
+                            github.com/patelhettt
+                          </a>
+                        </div>
                       </div>
                     </div>
                     
@@ -72,12 +88,25 @@ export default function ContactSection() {
                       </div>
                       <div>
                         <div className="text-gray-300 font-mono text-sm">TRYHACKME</div>
-                        <button 
-                          onClick={() => window.open("https://tryhackme.com/p/hett", "_blank")}
-                          className="text-green-500 hover:text-green-300 transition-colors"
-                        >
-                          tryhackme.com/p/hett
-                        </button>
+                        <div className="text-white">
+                          <a href="https://tryhackme.com/p/hett" target="_blank" rel="noopener noreferrer" className="hover:text-green-400 transition-colors">
+                            tryhackme.com/p/hett
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+                        <BookOpen className="text-yellow-400 text-xl" />
+                      </div>
+                      <div>
+                        <div className="text-gray-300 font-mono text-sm">MEDIUM</div>
+                        <div className="text-white">
+                          <a href="https://hettt.medium.com/" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors">
+                            hettt.medium.com
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -97,8 +126,8 @@ export default function ContactSection() {
                 <div>
                   <div className="w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg border border-green-500/30 hover:border-green-500/60 transition-all duration-300 flex items-center justify-center">
                     <div className="text-center">
-                      <div className="text-green-500 text-8xl mb-4">
-                        <Mail />
+                      <div className="text-green-500 text-8xl mb-4 flex justify-center">
+                        <Mail className="w-20 h-20" />
                       </div>
                       <div className="text-white font-bold text-2xl">Let's Connect</div>
                       <div className="text-green-500 font-mono">Ready to Collaborate</div>
