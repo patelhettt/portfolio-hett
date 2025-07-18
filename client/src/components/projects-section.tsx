@@ -41,9 +41,9 @@ export default function ProjectsSection() {
                 </div>
                 
                 <div className="text-green-500 font-mono text-sm mb-2">$ cat project_1.md</div>
-                <h3 className="text-xl font-bold text-white mb-3">LaPinoz VAPT Assessment</h3>
+                <h3 className="text-xl font-bold text-white mb-3">VAPT Assessment</h3>
                 <p className="text-gray-300 mb-4">
-                  Conducted comprehensive vulnerability assessment and penetration testing on LaPinoz website, 
+                  Conducted comprehensive vulnerability assessment and penetration testing on several website
                   identifying critical security vulnerabilities and providing detailed remediation recommendations.
                 </p>
                 
