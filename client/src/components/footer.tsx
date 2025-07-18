@@ -12,10 +12,10 @@ export default function Footer() {
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-green-500 font-mono mb-4 md:mb-0">
-            &gt; het_patel.exe --version 2024
+            &gt; het_patel.exe --version 2025
           </div>
           <div className="text-gray-400 text-sm">
-            Built with security and performance in mind • © 2024 Het Patel
+            Built with security and performance in mind • © 2025 Het Patel
           </div>
         </div>
       </div>
