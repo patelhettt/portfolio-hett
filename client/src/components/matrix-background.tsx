@@ -13,39 +13,62 @@ export default function MatrixBackground() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;:,.<>?";
+    // Enhanced character set with cybersecurity symbols
+    const characters = "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン!@#$%^&*()_+-=[]{}|;:,.<>?";
     const charArray = characters.split("");
 
-    const fontSize = 14;
+    const fontSize = 16;
     const columns = canvas.width / fontSize;
     const drops: number[] = [];
+    const speeds: number[] = [];
+    const opacities: number[] = [];
 
+    // Initialize drops with varying speeds and opacities
     for (let i = 0; i < columns; i++) {
-      drops[i] = 1;
+      drops[i] = Math.random() * -canvas.height;
+      speeds[i] = 0.5 + Math.random() * 2;
+      opacities[i] = 0.1 + Math.random() * 0.9;
     }
 
     function draw() {
       if (!ctx || !canvas) return;
 
-      ctx.fillStyle = "rgba(15, 23, 42, 0.05)";
+      // Create gradient fade effect
+      const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+      gradient.addColorStop(0, "rgba(15, 23, 42, 0.1)");
+      gradient.addColorStop(1, "rgba(15, 23, 42, 0.05)");
+      ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      ctx.fillStyle = "#00FF41";
-      ctx.font = `${fontSize}px monospace`;
+      ctx.font = `${fontSize}px 'JetBrains Mono', monospace`;
 
       for (let i = 0; i < drops.length; i++) {
         const text = charArray[Math.floor(Math.random() * charArray.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        const x = i * fontSize;
+        const y = drops[i] * fontSize;
 
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
+        // Create glowing effect
+        ctx.shadowColor = "#00FF41";
+        ctx.shadowBlur = 5;
+        ctx.fillStyle = `rgba(0, 255, 65, ${opacities[i]})`;
+        ctx.fillText(text, x, y);
+
+        // Reset shadow
+        ctx.shadowBlur = 0;
+
+        // Update drop position
+        drops[i] += speeds[i] * 0.1;
+
+        // Reset drop when it goes off screen
+        if (drops[i] * fontSize > canvas.height + 50) {
+          drops[i] = Math.random() * -50;
+          opacities[i] = 0.1 + Math.random() * 0.9;
+          speeds[i] = 0.5 + Math.random() * 2;
         }
-
-        drops[i]++;
       }
     }
 
-    const interval = setInterval(draw, 35);
+    const interval = setInterval(draw, 30);
 
     const handleResize = () => {
       canvas.width = window.innerWidth;
@@ -63,7 +86,7 @@ export default function MatrixBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 z-0 opacity-10 pointer-events-none"
+      className="fixed inset-0 z-0 opacity-15 pointer-events-none"
       style={{ background: "transparent" }}
     />
   );
